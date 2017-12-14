@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GTUGCPointView">
+            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_ugcpoint.png" highlightedImage="bg_ugcpoint_hl.png" translatesAutoresizingMaskIntoConstraints="NO" id="QIX-XR-TS1">
+                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="5Qr-kO-MRE"/>
+                        <constraint firstAttribute="height" constant="40" id="h4s-WZ-WNt"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_user_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="qWD-Nm-0rq">
+                    <rect key="frame" x="5" y="6" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="Ibb-Aq-Yr7"/>
+                        <constraint firstAttribute="height" constant="20" id="iJa-VQ-Byp"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_mappin_favorite.png" translatesAutoresizingMaskIntoConstraints="NO" id="dYC-aG-P8B">
+                    <rect key="frame" x="12" y="0.0" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="6Jw-f4-kI5"/>
+                        <constraint firstAttribute="width" constant="20" id="W1f-Sg-M4U"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="dYC-aG-P8B" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5XQ-kV-lHb"/>
+                <constraint firstItem="QIX-XR-TS1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="LME-Fb-UfQ"/>
+                <constraint firstItem="qWD-Nm-0rq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="MG4-Jb-DkW"/>
+                <constraint firstItem="qWD-Nm-0rq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="rMy-fB-v87"/>
+                <constraint firstItem="dYC-aG-P8B" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="sX3-Mb-Zci"/>
+                <constraint firstItem="QIX-XR-TS1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ySZ-D0-P4S"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="backgroundImageView" destination="QIX-XR-TS1" id="DO7-qa-cR6"/>
+                <outlet property="favoriteImageView" destination="dYC-aG-P8B" id="8Si-wQ-lTd"/>
+                <outlet property="userIconImageView" destination="qWD-Nm-0rq" id="S4B-W4-MUG"/>
+            </connections>
+            <point key="canvasLocation" x="146" y="187"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg_mappin_favorite.png" width="20" height="20"/>
+        <image name="bg_ugcpoint.png" width="35" height="32"/>
+        <image name="bg_ugcpoint_hl.png" width="35" height="32"/>
+        <image name="default_user_icon.png" width="20" height="20"/>
+    </resources>
+</document>
