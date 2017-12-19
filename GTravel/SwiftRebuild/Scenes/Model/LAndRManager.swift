@@ -27,7 +27,15 @@ class LAndRManager: NSObject {
 		}
 		return false
 	}
-	// 登录方法
+
+	func autoLogin() -> Void {
+		if self.loginAdapter.canAutoLogin {
+			self.delegate?.showLoading("登录中...")
+			self.loginAdapter.autoLogin()
+		}
+	}
+
+	/// 普通登录方法
 	func login() -> Void {
 		guard isUsrNamAviliable&&isPWDAviliable else {
 			var content: String = "用户名和密码不能为空"
@@ -56,7 +64,7 @@ class LAndRManager: NSObject {
 		}
 	}
 
-	// 微信登录的方法
+	/// 微信登录的方法
 	func weChatLoginRequest() -> Void {
 		loginAdapter.loginReslult = {(error: Error?, msg: String) in
 			self.delegate?.hideLoading()
@@ -71,7 +79,7 @@ class LAndRManager: NSObject {
 		loginAdapter.weChatLogin()
 	}
 
-	// 注册方法
+	/// 注册方法
 	func register() -> Void {
 		if let delegate = self.delegate {
 			delegate.showLoading("注册中...")

@@ -180,7 +180,7 @@
     if (self.autoLogin) {
         if (RYIsValidString(self.cacheUnit.userID)) { // 有userid
             // 根据userid去自动登录
-            [self startLogin];
+            [self startLogin]; // UI变化
             NSLog(@"%@", self.cacheUnit.userNickName);
             //            self.nameTextFiled.text = self.cacheUnit.userNickName;
             self.passWordTextFiled.text = @"********";
@@ -190,7 +190,7 @@
             if (RYIsValidString(self.cacheUnit.passWord) && RYIsValidString(self.cacheUnit.userNickName)) { // 有账号密码去自动登录
                 self.nameTextFiled.text = self.cacheUnit.userNickName;
                 self.passWordTextFiled.text = @"********";
-                [self startLogin];
+                [self startLogin]; // UI变化
                 [self.model startNormalAutoLogin];
             }
             // 没有userid,也没有账号密码。等待用户操作

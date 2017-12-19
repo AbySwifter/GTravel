@@ -13,7 +13,25 @@ typealias LoginResultCallback = (_ err:Error?, _ msg: String) -> Void
 
 class LoginAdapter: NSObject, GTModelDelegate {
 	var model: GTModel = GTModel.shared() // model单例，Objective-C类C
+	var cacheUnit: GTCacheUnit = GTCacheUnit.sharedCache() // 缓存单例，用来检测是否可以自动登录
 	var loginReslult: LoginResultCallback?
+	private var isUserIDExist: Bool {
+		if let userID = cacheUnit.userID {
+			return userID != ""
+		}
+		return false
+	}
+	private var isNickName: Bool {
+		guard let nickname = cacheUnit.userNickName else { return false }
+		return nickname != ""
+	}
+	private var isPWD: Bool {
+		guard let pwd = cacheUnit.passWord else { return false }
+		return pwd != ""
+	}
+	var canAutoLogin: Bool {
+		return isUserIDExist || (isPWD && isNickName)
+	}
 	override init() {
 		super.init()
 		model.delegate = self
@@ -35,6 +53,15 @@ class LoginAdapter: NSObject, GTModelDelegate {
 		model.startWeChatAuthentication()
 	}
 
+	/// 自动登录
+	func autoLogin() -> Void {
+		if self.isUserIDExist {
+			// 根据UserID去登录
+			model.startToLogin()
+		} else if self.isNickName&&self.isPWD {
+			model.startNormalAutoLogin()
+		}
+	}
 	/// 显示登录页的方法
 	///
 	/// - Parameters:

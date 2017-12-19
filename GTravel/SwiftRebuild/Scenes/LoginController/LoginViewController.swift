@@ -425,6 +425,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 		}) { (success) in
 			// 隐藏整个广告页
 			self.removeLoadingView()
+			// FIXME:之后开始尝试自动登录
+			self.manager.autoLogin()
 		}
 	}
 
