@@ -9,9 +9,11 @@
 import UIKit
 import MBProgressHUD
 
+
 class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate {
 
 	//MARK: 属性
+	@objc var needLoadingView: Bool = true
 	// 存储属性
 	private var isAnimationPlay: Bool = false
 	private var isLoadingViewHiden: Bool = false
@@ -22,7 +24,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 	private var dismissLoading = false
 	let isWeChatInstall: Bool = {
 		// FIXME: 添加判断微信是否安装的方法
-		return true
+		let isWxInstall = WXApi.isWXAppInstalled()
+		return isWxInstall
 	}()
 	// 动画页懒加载属性
 	lazy var adImageView: UIImageView = {
@@ -62,7 +65,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 		//首先在底层创建登录页
 		self.createLoginView()
 		// 然后在上层创建广告页
-		self.createLoadingView()
+		if (self.needLoadingView) {
+			self.createLoadingView()
+		}
     }
 
     override func didReceiveMemoryWarning() {
@@ -198,6 +203,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 		}
 		_passWordTextField.placeholder = "密码"
 		_passWordTextField.isSecureTextEntry = true
+		_passWordTextField.addTarget(self, action: #selector(passwordChanged(textField:)), for: .editingChanged)
 		return textFaildView
 	}
 	// 创建登录按钮
@@ -328,8 +334,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 	}
 	
 	/**
-		播放动画的方法
+		播放动画的方法, 想要在oc里访问，必须加入objc
 	*/
+	@objc
 	func startAnimation() -> Void {
 		if self.isAnimationPlay {
 			return
@@ -432,6 +439,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 	@objc
 	func weChatLogin(button: UIButton) -> Void {
 		button.alpha = 1.0
+		self.manager.weChatLoginRequest()
 	}
 
 	@objc
@@ -442,21 +450,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 		self.manager.login()
 	}
 
+	@objc
 	func userNameChanged(textField:UITextField) -> Void {
 		self.manager.userName = textField.text
 	}
 
+	@objc
 	func passwordChanged(textField:UITextField) -> Void {
 		self.manager.passWord = textField.text
 	}
 
 	// MARK:ToastDelegete
 	func showLoading(_ content: String) {
-
+		self.showHUD(in: self.view, hint: content, yOffset: 1.0)
 	}
 
 	func hideLoading() {
-
+		self.hideHud(view: self.view)
 	}
 
 	func showTitleToast(_ content: String) {

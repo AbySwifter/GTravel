@@ -191,22 +191,24 @@
 //    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
 //    UIViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
 	LoginViewController* loginViewController = [[LoginViewController alloc] init];
+	loginViewController.needLoadingView = animated; // 是否需要登录动画
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
     [navController setNavigationBarHidden:YES];
     self.loginWindow.rootViewController = navController;
     [self.loginWindow makeKeyAndVisible];
-    self.loginWindow.alpha = 0.0;
-    if (animated) {
-        [UIView animateWithDuration:0.5
-            animations:^{
-              self.loginWindow.alpha = 1.0;
-            }
-            completion:^(BOOL finished){
-				[loginViewController startAnimation];
-            }];
-    }
-    else
-        self.loginWindow.alpha = 1.0;
+    self.loginWindow.alpha = 1.0;
+	if (animated) {
+		[UIView animateWithDuration:0.5
+						 animations:^{
+							 self.loginWindow.alpha = 1.0;
+						 }
+						 completion:^(BOOL finished){
+							 [loginViewController startAnimation];
+						 }];
+	} else {
+		self.loginWindow.alpha = 1.0;
+	}
+
 }
 
 - (void)hiddenLoginViewAnimated:(BOOL)animated
@@ -223,6 +225,7 @@
     }
     else {
         self.loginWindow.alpha = 0.0;
+		self.loginWindow = nil;
         [self.window makeKeyAndVisible];
     }
 }

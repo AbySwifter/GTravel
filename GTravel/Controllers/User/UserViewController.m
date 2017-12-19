@@ -76,7 +76,8 @@ typedef NS_ENUM(NSInteger, GTCellType) {
     [self.model loginout];
     [self.navigationController popViewControllerAnimated:NO];
     AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    [delegate showLoginViewAnimated:YES];
+//    [delegate showLoginViewAnimated:YES];
+	[delegate showLoginViewAnimated:NO];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"changeAuto" object:nil];
 }
 

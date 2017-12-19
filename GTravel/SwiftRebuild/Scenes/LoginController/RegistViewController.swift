@@ -17,8 +17,8 @@ class RegistViewController: UIViewController {
 	@IBOutlet weak var regiestBtn: UIButton!
 
 	let isWeChatInstall: Bool = {
-
-		return true
+		let isWxInstall = WXApi.isWXAppInstalled()
+		return isWxInstall
 	}()
 	override func viewDidLoad() {
         super.viewDidLoad()

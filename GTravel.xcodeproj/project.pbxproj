@@ -19,7 +19,6 @@
 		615ACE4F1B83188000E82737 /* iconDown_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 615ACE4E1B83188000E82737 /* iconDown_normal.png */; };
 		615ACE521B83248A00E82737 /* bottom_logoGer.png in Resources */ = {isa = PBXBuildFile; fileRef = 615ACE501B83248A00E82737 /* bottom_logoGer.png */; };
 		615ACE531B83248A00E82737 /* bottom_logoLuf.png in Resources */ = {isa = PBXBuildFile; fileRef = 615ACE511B83248A00E82737 /* bottom_logoLuf.png */; };
-		61653B071B79FFBB00567BD3 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61653B061B79FFBB00567BD3 /* libWeChatSDK.a */; };
 		61734E401B663D010098CE57 /* GTTownsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61734E3F1B663D010098CE57 /* GTTownsCell.m */; };
 		6174B45B1B705702003FD960 /* UserRouteCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6174B4591B705702003FD960 /* UserRouteCollectionCell.m */; };
 		6174B45C1B705702003FD960 /* UserRouteCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6174B45A1B705702003FD960 /* UserRouteCollectionCell.xib */; };
@@ -274,6 +273,7 @@
 		C7EE81731AFA265A009B0430 /* DTWeChatShareMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C7EE81721AFA265A009B0430 /* DTWeChatShareMessage.m */; };
 		C7FC84EA1AF875FA00416EB2 /* DTRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FC84E91AF875FA00416EB2 /* DTRootViewController.m */; };
 		DD876E6F1FE8A9C700D1320C /* slogan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD876E6E1FE8A9C700D1320C /* slogan@2x.png */; };
+		DD876E721FE8B19400D1320C /* LoginAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD876E711FE8B19400D1320C /* LoginAdapter.swift */; };
 		DDDE82BE1FE7B985001399E9 /* WeChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDE82BD1FE7B985001399E9 /* WeChatManager.swift */; };
 		DDDE82CA1FE7BDAB001399E9 /* LAndRManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDE82C21FE7BDAB001399E9 /* LAndRManager.swift */; };
 		DDDE82CB1FE7BDAB001399E9 /* StackView+HitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDE82C31FE7BDAB001399E9 /* StackView+HitTest.swift */; };
@@ -289,11 +289,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0993B3B31F41A14900D7E219 /* read_me.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = read_me.txt; sourceTree = "<group>"; };
-		0993B3B41F41A14900D7E219 /* WXApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
-		0993B3B51F41A14900D7E219 /* WXApiObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
-		0993B3B61F41A14900D7E219 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
-		0993B3B71F41A14900D7E219 /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		09CC55031EBB315C001F796D /* GTravel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GTravel.entitlements; sourceTree = "<group>"; };
 		61079F0C1B5BE61C000ED7CC /* TownsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TownsViewController.h; sourceTree = "<group>"; };
 		61079F0D1B5BE61C000ED7CC /* TownsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TownsViewController.m; sourceTree = "<group>"; };
@@ -313,7 +308,6 @@
 		615ACE4E1B83188000E82737 /* iconDown_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconDown_normal.png; sourceTree = "<group>"; };
 		615ACE501B83248A00E82737 /* bottom_logoGer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_logoGer.png; sourceTree = "<group>"; };
 		615ACE511B83248A00E82737 /* bottom_logoLuf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_logoLuf.png; sourceTree = "<group>"; };
-		61653B061B79FFBB00567BD3 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		61734E3E1B663D010098CE57 /* GTTownsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTTownsCell.h; sourceTree = "<group>"; };
 		61734E3F1B663D010098CE57 /* GTTownsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTTownsCell.m; sourceTree = "<group>"; };
 		6174B4581B705702003FD960 /* UserRouteCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRouteCollectionCell.h; sourceTree = "<group>"; };
@@ -439,8 +433,6 @@
 		61E116A41B62109700771B73 /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = "<group>"; };
 		61E116A51B62109700771B73 /* ShareSDKCoreService.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKCoreService.framework; sourceTree = "<group>"; };
 		61E116A61B62109700771B73 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ShareSDKLocalizable.strings"; sourceTree = "<group>"; };
-		61E116AE1B62109700771B73 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
-		61E116AF1B62109700771B73 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		61E116B01B62109700771B73 /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
 		61E149F41B5627B000409E88 /* GTTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTTableViewCell.h; sourceTree = "<group>"; };
 		61E149F51B5627B000409E88 /* GTTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTTableViewCell.m; sourceTree = "<group>"; };
@@ -739,6 +731,7 @@
 		C7FC84E91AF875FA00416EB2 /* DTRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTRootViewController.m; sourceTree = "<group>"; };
 		CA205E27E16E3B8F871F27EE /* Pods_GTravel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GTravel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD876E6E1FE8A9C700D1320C /* slogan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slogan@2x.png"; sourceTree = "<group>"; };
+		DD876E711FE8B19400D1320C /* LoginAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAdapter.swift; sourceTree = "<group>"; };
 		DDDE82BC1FE7B985001399E9 /* GTravel-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GTravel-Bridging-Header.h"; sourceTree = "<group>"; };
 		DDDE82BD1FE7B985001399E9 /* WeChatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeChatManager.swift; sourceTree = "<group>"; };
 		DDDE82C21FE7BDAB001399E9 /* LAndRManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LAndRManager.swift; sourceTree = "<group>"; };
@@ -778,7 +771,6 @@
 				61E116991B620F0100771B73 /* libz.1.2.5.dylib in Frameworks */,
 				61E116971B620EED00771B73 /* Security.framework in Frameworks */,
 				61E116951B620EDC00771B73 /* libsqlite3.dylib in Frameworks */,
-				61653B071B79FFBB00567BD3 /* libWeChatSDK.a in Frameworks */,
 				61E116B31B62109700771B73 /* AGCommon.framework in Frameworks */,
 				61E116BA1B62109700771B73 /* ShareSDK.framework in Frameworks */,
 				61E116931B620EBC00771B73 /* QuartzCore.framework in Frameworks */,
@@ -953,7 +945,6 @@
 			isa = PBXGroup;
 			children = (
 				61E116A81B62109700771B73 /* SinaWeiboSDK */,
-				61E116AC1B62109700771B73 /* WeChatSDK */,
 			);
 			path = Extend;
 			sourceTree = "<group>";
@@ -976,16 +967,6 @@
 				DF1501431C9AACEA000BB0C1 /* WeiboUser.h */,
 			);
 			path = SinaWeiboSDK;
-			sourceTree = "<group>";
-		};
-		61E116AC1B62109700771B73 /* WeChatSDK */ = {
-			isa = PBXGroup;
-			children = (
-				61653B061B79FFBB00567BD3 /* libWeChatSDK.a */,
-				61E116AE1B62109700771B73 /* WXApi.h */,
-				61E116AF1B62109700771B73 /* WXApiObject.h */,
-			);
-			path = WeChatSDK;
 			sourceTree = "<group>";
 		};
 		71D370AD1B48AE2A0071732D /* Views */ = {
@@ -1145,18 +1126,6 @@
 				6177D00F1B6786D80062CCC6 /* line_share_normal.png */,
 			);
 			path = bt;
-			sourceTree = "<group>";
-		};
-		C71EC5951AFA0E38003FDFF4 /* WeChatSDK_1.5 */ = {
-			isa = PBXGroup;
-			children = (
-				0993B3B61F41A14900D7E219 /* libWeChatSDK.a */,
-				0993B3B31F41A14900D7E219 /* read_me.txt */,
-				0993B3B71F41A14900D7E219 /* README.txt */,
-				0993B3B41F41A14900D7E219 /* WXApi.h */,
-				0993B3B51F41A14900D7E219 /* WXApiObject.h */,
-			);
-			path = WeChatSDK_1.5;
 			sourceTree = "<group>";
 		};
 		C7321B381B0458730091E9BA /* Lib_RefreshView */ = {
@@ -1519,7 +1488,6 @@
 				C7530F1D1AF21B35009E00CD /* Lib_Common */,
 				C74212C51AF7524400122BD5 /* Lib_MBProgressHUD */,
 				C74212D11AF780C200122BD5 /* Lib_DTKeychain */,
-				C71EC5951AFA0E38003FDFF4 /* WeChatSDK_1.5 */,
 				C7EE81551AFA1B1D009B0430 /* Lib_DTWeChatSDK */,
 				C7321B381B0458730091E9BA /* Lib_RefreshView */,
 				C70B72401B15AC9000B79400 /* Lib_AFNetworking */,
@@ -1705,9 +1673,18 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		DD876E701FE8B12E00D1320C /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				DD876E711FE8B19400D1320C /* LoginAdapter.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
 		DDA3ED221FE219BC008B2CDA /* SwiftRebuild */ = {
 			isa = PBXGroup;
 			children = (
+				DD876E701FE8B12E00D1320C /* Adapter */,
 				DDDE82C11FE7BCD5001399E9 /* Utils */,
 				DDDE82C01FE7BCBD001399E9 /* Scenes */,
 				DDDE82BF1FE7BCA4001399E9 /* Extension */,
@@ -2120,6 +2097,7 @@
 				C70B72671B15AC9000B79400 /* AFHTTPRequestOperationManager.m in Sources */,
 				C70B72731B15AC9000B79400 /* UIImageView+AFNetworking.m in Sources */,
 				C70B72711B15AC9000B79400 /* UIAlertView+AFNetworking.m in Sources */,
+				DD876E721FE8B19400D1320C /* LoginAdapter.swift in Sources */,
 				61E0CACB1B54C80900AB745B /* SDWebImageDecoder.m in Sources */,
 				C711A9381B1ED5D30088BC7A /* GTFilter.m in Sources */,
 				71D370B61B48B9AF0071732D /* DTPartner.m in Sources */,
@@ -2278,6 +2256,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Shi Dai Yi Feng Information Technology Co.Ltd. (R3EQ7H8QLX)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2296,14 +2275,14 @@
 					"$(PROJECT_DIR)/_Libs/ShareSDK/Extend/WeChatSDK",
 					"$(PROJECT_DIR)/_Libs/UMAnalyticsSDK",
 				);
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dragontrail.gtravel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "GTravel/SwiftRebuild/GTravel-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$SRCROOT/GTravel/SwiftRebuild/GTravel-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -2317,6 +2296,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Shi Dai Yi Feng Information Technology Co.Ltd. (R3EQ7H8QLX)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2336,13 +2316,13 @@
 					"$(PROJECT_DIR)/_Libs/ShareSDK/Extend/WeChatSDK",
 					"$(PROJECT_DIR)/_Libs/UMAnalyticsSDK",
 				);
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dragontrail.gtravel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "GTravel/SwiftRebuild/GTravel-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "$SRCROOT/GTravel/SwiftRebuild/GTravel-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

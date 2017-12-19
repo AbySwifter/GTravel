@@ -19,14 +19,6 @@ private var HUDKey = "HUDKey"
 // 思考有没有其他的解决方案
 extension UIViewController {
 
-	var hud: MBProgressHUD? {
-		get {
-			return (objc_getAssociatedObject(self, &HUDKey) as? MBProgressHUD)!
-		}
-		set {
-			objc_setAssociatedObject(self, &HUDKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-		}
-	}
 	/**
 	显示提示信息(有菊花, 一直显示, 不消失)，默认文字“加载中”，默认偏移量0
 
@@ -52,7 +44,6 @@ extension UIViewController {
 		HUD.offset.y = yOffset ?? 0
 		view.addSubview(HUD)
 		HUD.show(animated: true)
-		hud = HUD
 	}
 
 	/**
@@ -78,7 +69,6 @@ extension UIViewController {
 		HUD.offset.y = yOffset ?? 0
 		HUD.margin = 12
 		HUD.hide(animated: true, afterDelay: duration)
-		hud = HUD
 	}
 
 	/**
@@ -105,15 +95,12 @@ extension UIViewController {
 		HUD.offset.y = yOffset ?? 0
 		HUD.margin = 12
 		HUD.hide(animated: true, afterDelay: duration)
-		hud = HUD
 	}
 
 
 	/// 移除提示
-	func hideHud() {
+	func hideHud(view: UIView) {
 		//如果解包成功则移除，否则不做任何事
-		if let hud = hud {
-			hud.hide(animated: true)
-		}
+		MBProgressHUD.hide(for: view, animated: true)
 	}
 }

@@ -122,8 +122,28 @@ typedef NS_ENUM(NSInteger, GTFilterPointType) {
 
 @protocol GTModelDelegate <NSObject>
 
+
+/**
+ 微信授权成功的代理方法
+
+ @param model GTModel
+ */
 - (void)weChatAuthenticationDidSucceedWithModel:(GTModel *)model;
+
+/**
+ 登录成功的代理方法
+
+ @param model GTModel
+ @param userItem GTravelUserItem
+ */
 - (void)model:(GTModel *)model didLoginWithUserItem:(GTravelUserItem *)userItem;
+
+/**
+ 登录失败的代理方法
+
+ @param model 登录失败
+ @param error 失败参数
+ */
 - (void)model:(GTModel *)model operationDidFailedWithError:(NSError *)error;
 
 @end

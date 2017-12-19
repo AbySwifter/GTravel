@@ -87,7 +87,7 @@
 
         // 普通登录,验证账号密码
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.labelText = @"登录中...";
+        hud.label.text = @"登录中...";
         NSDictionary *params = @{ @"nick_name" : self.nameTextFiled.text,
                                   @"pwd" : self.passWordTextFiled.text
         };
@@ -311,14 +311,15 @@
 {
     dispatch_async(dispatch_get_main_queue(), ^{
       MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-      hud.labelText = @"正在登陆...";
+      hud.label.text = @"正在登陆...";
     });
 }
 
 - (void)model:(GTModel *)model didLoginWithUserItem:(GTravelUserItem *)userItem
 {
     [self showLoginView:NO animated:YES];
-    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+//    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+	[MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 - (void)model:(GTModel *)model operationDidFailedWithError:(NSError *)error
@@ -326,8 +327,9 @@
     RYCONDITIONLOG(DEBUG, @"%@", error);
     MBProgressHUD *hud = [MBProgressHUD HUDForView:self.view];
     hud.mode = MBProgressHUDModeText;
-    hud.labelText = @"登陆失败，请稍后再试!";
-    [hud hide:YES afterDelay:2.0];
+    hud.label.text = @"登陆失败，请稍后再试!";
+//    [hud hide:YES afterDelay:2.0];
+	[hud hideAnimated:YES afterDelay:2.0];
 }
 
 #pragma mark - DTScrollViewDelegate
