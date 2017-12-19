@@ -14,6 +14,7 @@ typealias LoginResultCallback = (_ err:Error?, _ msg: String) -> Void
 class LoginAdapter: NSObject, GTModelDelegate {
 	var model: GTModel = GTModel.shared() // model单例，Objective-C类C
 	var cacheUnit: GTCacheUnit = GTCacheUnit.sharedCache() // 缓存单例，用来检测是否可以自动登录
+	var netWorkUnit: GTNetworkUnit = GTNetworkUnit.shared() // 网络请求单例
 	var loginReslult: LoginResultCallback?
 	private var isUserIDExist: Bool {
 		if let userID = cacheUnit.userID {
@@ -60,6 +61,17 @@ class LoginAdapter: NSObject, GTModelDelegate {
 			model.startToLogin()
 		} else if self.isNickName&&self.isPWD {
 			model.startNormalAutoLogin()
+		}
+	}
+	// 注册方法
+	func regeistAction(nickName: String, passWord:String) -> Void {
+		netWorkUnit.registerUser(withNickName: nickName, passWord: passWord, sex: 1) { (error: Error?, responseObject: Any) in
+			if let err = error {
+				self.loginReslult?(err, "注册失败")
+				return
+			}
+			self.loginReslult?(nil, "注册成功")
+
 		}
 	}
 	/// 显示登录页的方法

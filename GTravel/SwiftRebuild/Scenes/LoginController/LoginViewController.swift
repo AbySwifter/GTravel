@@ -69,6 +69,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 			self.createLoadingView()
 		}
     }
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		self.manager.delegate = nil
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -76,6 +80,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
     }
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+		self.manager.delegate = self
 		self.navigationController?.setNavigationBarHidden(true, animated: true)
 	}
 	// 防止内存泄露

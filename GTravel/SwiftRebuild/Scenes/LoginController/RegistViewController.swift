@@ -8,13 +8,18 @@
 
 import UIKit
 
-class RegistViewController: UIViewController {
+class RegistViewController: UIViewController, ToastDelegate {
 
 	@IBOutlet weak var cancelBtn: UIButton!
 	@IBOutlet weak var nickNameTextField: UITextField!
 	@IBOutlet weak var secretTextfield: UITextField!
 	@IBOutlet weak var sureSecretTextField: UITextField!
 	@IBOutlet weak var regiestBtn: UIButton!
+	lazy var manager: LAndRManager = {
+		let manager = LAndRManager.init()
+		manager.delegate = self
+		return manager
+	}()
 
 	let isWeChatInstall: Bool = {
 		let isWxInstall = WXApi.isWXAppInstalled()
@@ -22,12 +27,20 @@ class RegistViewController: UIViewController {
 	}()
 	override func viewDidLoad() {
         super.viewDidLoad()
+		NotificationCenter.default.addObserver(self, selector: #selector(registerSuccess), name: NSNotification.Name.init("registerSuccess"), object: nil)
 		self.view.backgroundColor = UIColor.init(hexString: "#0F0F0F")
         // Do any additional setup after loading the view.
 		self.regiestBtn.layer.cornerRadius = 6.0
 		addBottomButtons()
     }
-
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		self.manager.delegate = nil
+	}
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		self.manager.delegate = self
+	}
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -123,6 +136,7 @@ class RegistViewController: UIViewController {
 	@objc
 	func weChatLogin(button: UIButton) -> Void {
 		button.alpha = 1.0
+		self.manager.weChatLoginRequest()
 	}
 
 
@@ -131,7 +145,36 @@ class RegistViewController: UIViewController {
 	}
 
 	@IBAction func regiestAction(_ sender: Any) {
+		self.manager.register()
+	}
 
+	@IBAction func nickNameChange(_ sender: UITextField) {
+		self.manager.nickName = sender.text
+	}
+
+	@IBAction func pwdOnceChange(_ sender: UITextField) {
+		self.manager.pwdOnce = sender.text
+	}
+
+	@IBAction func pwdTwiceChange(_ sender: UITextField) {
+		self.manager.pwdTwice = sender.text
+	}
+	// MARK: -ToastDelegate
+	func showTitleToast(_ content: String) {
+		self.showHint(in: self.view, hint: content)
+	}
+
+	func showLoading(_ content: String) {
+		self.showHUD(in: self.view, hint: content, yOffset: 1.0)
+	}
+
+	func hideLoading() {
+		self.hideHud(view: self.view)
+	}
+
+	@objc
+	func registerSuccess() -> Void {
+		self.navigationController?.popViewController(animated: true)
 	}
 	/*
     // MARK: - Navigation

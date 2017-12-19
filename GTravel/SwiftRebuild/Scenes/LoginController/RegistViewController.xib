@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistViewController" customModule="GTravel_test" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistViewController" customModule="GTravel" customModuleProvider="target">
             <connections>
                 <outlet property="cancelBtn" destination="MwA-Se-CD7" id="7MY-sB-0QO"/>
                 <outlet property="nickNameTextField" destination="ehL-4b-2BT" id="4PK-jJ-XmC"/>
@@ -45,6 +45,9 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="nickNameChange:" destination="-1" eventType="editingChanged" id="9rO-Ab-2cT"/>
+                    </connections>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1yJ-QF-F54">
                     <rect key="frame" x="25" y="185" width="325" height="40"/>
@@ -53,7 +56,10 @@
                     </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <connections>
+                        <action selector="pwdOnceChange:" destination="-1" eventType="editingChanged" id="xI8-5j-s6T"/>
+                    </connections>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="确认密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A5S-Mz-JXs">
                     <rect key="frame" x="25" y="240" width="325" height="40"/>
@@ -62,9 +68,12 @@
                     </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <connections>
+                        <action selector="pwdTwiceChange:" destination="-1" eventType="editingChanged" id="0EX-1g-TrH"/>
+                    </connections>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6W3-HO-Adi">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6W3-HO-Adi">
                     <rect key="frame" x="25" y="300" width="325" height="40"/>
                     <color key="backgroundColor" red="0.75773459672927856" green="0.0025428691878914833" blue="0.056451402604579926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
