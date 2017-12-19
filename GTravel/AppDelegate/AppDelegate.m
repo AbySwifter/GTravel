@@ -20,7 +20,8 @@
 #import "WXApi.h"
 #import "WeiboSDK.h"
 #import "MobClick.h"
-
+//Swift 类
+#import "GTravel-Swift.h"
 
 #define WeChatAppID @"wx49df81aa4b755240"
 #define WeChatSecret @"f1d7cb907ba7d23d496da98b6dff714b"
@@ -56,21 +57,16 @@
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *controller = [storyBoard instantiateInitialViewController];
     self.window.rootViewController = controller;
-    if (![WXApi isWXAppInstalled]) {
-        // 如果用户没有安装微信，发送通知，更改按钮文字。
-    }
-
     [self registerAppToWeChat:WeChatAppID secret:WeChatSecret];
     [self registerAppToPushNotification];
     [[DTLocationUnit sharedLocationUnit] startUpdatingUserLocation];
     [self.window makeKeyAndVisible];
+	// 打开登录页面, FIXME: 这里替换为新写的登录注册页
     [self showLoginViewAnimated:YES];
-
     // ShareSDK
     [ShareSDK registerApp:ShareSDKAppKey];
     // 新浪
     [ShareSDK connectSinaWeiboWithAppKey:SinaAppKey appSecret:SinaAppSecret redirectUri:@"http://www.baidu.com" weiboSDKCls:[WeiboSDK class]];
-
     // UM
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     [MobClick setAppVersion:version];
@@ -183,12 +179,19 @@
 }
 
 #pragma mark - Public Methods
+
+/**
+ 显示登录页
+
+ @param animated 是否需要动画
+ */
 - (void)showLoginViewAnimated:(BOOL)animated
 {
     self.loginWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
-    UIViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+//    UIViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+	LoginViewController* loginViewController = [[LoginViewController alloc] init];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
     [navController setNavigationBarHidden:YES];
     self.loginWindow.rootViewController = navController;
     [self.loginWindow makeKeyAndVisible];
@@ -199,7 +202,7 @@
               self.loginWindow.alpha = 1.0;
             }
             completion:^(BOOL finished){
-
+				[loginViewController startAnimation];
             }];
     }
     else

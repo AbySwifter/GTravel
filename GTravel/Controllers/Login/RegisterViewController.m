@@ -50,6 +50,9 @@
     self.sexLabel.text = @" 女";
 }
 
+
+
+#pragma mark - 视图生命周期函数
 - (void)viewDidLoad
 {
     [super viewDidLoad];

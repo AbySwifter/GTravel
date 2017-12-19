@@ -44,19 +44,19 @@
     [self.textFieldTitle resignFirstResponder];
     if (RYIsValidString(self.textFieldTitle.text)) {
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.labelText = @"创建中...";
+        hud.label.text = @"创建中...";
         [self.model createLine:self.textFieldTitle.text
                    description:self.textViewDescription.text
                     completion:^(NSError *error) {
                       if (error) {
                           hud.mode = MBProgressHUDModeText;
-                          hud.labelText = @"创建失败，请稍后再试！";
-                          [hud hide:YES afterDelay:3.0];
+                          hud.label.text= @"创建失败，请稍后再试！";
+						  [hud hideAnimated:YES afterDelay:3.0];
                       }
                       else {
                           hud.mode = MBProgressHUDModeText;
-                          hud.labelText = @"创建成功！";
-                          [hud hide:YES afterDelay:3.0];
+                          hud.label.text = @"创建成功！";
+                          [hud hideAnimated:YES afterDelay:3.0];
                           if (RYDelegateCanResponseToSelector(self.delegate, @selector(newRouteViewControllerDidCreateNewRoute:))) {
                               [self.delegate newRouteViewControllerDidCreateNewRoute:self];
                           }

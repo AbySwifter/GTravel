@@ -220,7 +220,9 @@
     [self.advertiseView addSubview:partnerLogo];
     [partnerLogo launchLogo];
 
-    self.autoLogin = YES;
+//    self.autoLogin = YES;
+	// 自动登录
+	self.autoLogin = NO;
 
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(putEnded)];
     [self.view addGestureRecognizer:tap];

@@ -10,6 +10,8 @@
 #import "RYCommon.h"
 #import "AroundViewController.h"
 #import "AroundMapViewController.h"
+// Swift类
+#import "GTravel-Swift.h"
 
 NSString *const kGTNotificationNavigationControllerWillPopViewController = @"kGTNotificationNavigationControllerWillPopViewController";
 //NSString *const kGTNotificationNavigationControllerWillPushViewController = @"kGTNotificationNavigationControllerWillPushViewController";
@@ -29,15 +31,15 @@ NSString *const kGTNotificationViewController = @"kGTNotificationViewController"
     // Do any additional setup after loading the view.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+	[super viewWillAppear:animated];
+}
+
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
 
 - (void)didReceiveMemoryWarning
 {

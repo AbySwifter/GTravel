@@ -118,25 +118,26 @@
     }
     else {
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.labelText = @"加载中...";
+        hud.label.text = @"加载中...";
         [self.model requestCategoryWithCompletion:^(NSError *error, NSArray *items) {
           if (error) {
               hud.mode = MBProgressHUDModeText;
-              hud.labelText = @"加载失败,请稍后再试!";
-              [hud hide:YES afterDelay:1.0];
+              hud.label.text = @"加载失败,请稍后再试!";
+			  [hud hideAnimated:YES afterDelay:1.0];
           }
           else if (RYIsValidArray(items)) {
 
               self.arrCategories = items;
               [self.collectionView reloadData];
               [self.collectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
-              [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+//              [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+			  [MBProgressHUD hideHUDForView:self.view animated:YES];
               [self loadPointsByCategory:self.selectCategory filter:self.selectFilter];
           }
           else {
               hud.mode = MBProgressHUDModeText;
-              hud.labelText = @"没有数据!";
-              [hud hide:YES afterDelay:2.0];
+              hud.label.text = @"没有数据!";
+              [hud hideAnimated:YES afterDelay:2.0];
           }
         }];
     }
@@ -145,7 +146,7 @@
 - (void)loadPointsByCategory:(GTCategory *)category filter:(GTFilter *)filter
 {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"加载中...";
+    hud.label.text = @"加载中...";
 
     NSString *cityOrTownID = nil;
     if (self.cityItem) {
@@ -164,17 +165,17 @@
 
                                    if (error) {
                                        hud.mode = MBProgressHUDModeText;
-                                       hud.labelText = @"加载失败,请稍后再试!";
-                                       [hud hide:YES afterDelay:1.0];
+                                       hud.label.text = @"加载失败,请稍后再试!";
+                                       [hud hideAnimated:YES afterDelay:1.0];
                                    }
                                    else if (RYIsValidArray(points)) {
-                                       [hud hide:YES afterDelay:0];
+                                       [hud hideAnimated:YES afterDelay:0];
                                        [self addAnnotationsOfCityOrTownPoints:points];
                                    }
                                    else {
                                        hud.mode = MBProgressHUDModeText;
-                                       hud.labelText = @"没有数据!";
-                                       [hud hide:YES afterDelay:2.0];
+                                       hud.label.text = @"没有数据!";
+                                       [hud hideAnimated:YES afterDelay:2.0];
                                    }
                                  }];
 }
