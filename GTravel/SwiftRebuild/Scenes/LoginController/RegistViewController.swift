@@ -25,6 +25,7 @@ class RegistViewController: UIViewController, ToastDelegate {
 		let isWxInstall = WXApi.isWXAppInstalled()
 		return isWxInstall
 	}()
+	// MARK: 视图的生命周期
 	override func viewDidLoad() {
         super.viewDidLoad()
 		NotificationCenter.default.addObserver(self, selector: #selector(registerSuccess), name: NSNotification.Name.init("registerSuccess"), object: nil)
