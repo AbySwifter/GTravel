@@ -6716,10 +6716,9 @@
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热门线路" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxP-HK-bTz">
-                                                    <rect key="frame" x="10" y="8" width="68" height="30"/>
+                                                    <rect key="frame" x="10" y="8" width="69.5" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="0Dd-iJ-3WC"/>
-                                                        <constraint firstAttribute="width" constant="68" id="VlS-bQ-rnJ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -6727,13 +6726,11 @@
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="0Dd-iJ-3WC"/>
-                                                            <exclude reference="VlS-bQ-rnJ"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="0Dd-iJ-3WC"/>
-                                                            <include reference="VlS-bQ-rnJ"/>
                                                         </mask>
                                                     </variation>
                                                 </label>
@@ -7341,7 +7338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B3N-Gy-T8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="96" y="-1294.5"/>
+            <point key="canvasLocation" x="95.200000000000003" y="-1294.9025487256372"/>
         </scene>
         <!--Cities View Controller-->
         <scene sceneID="UEL-fO-iUP">
@@ -7680,6 +7677,6 @@
         <image name="bt_map_plus.png" width="27" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4rP-On-l5o"/>
+        <segue reference="auc-Fs-kdp"/>
     </inferredMetricsTieBreakers>
 </document>

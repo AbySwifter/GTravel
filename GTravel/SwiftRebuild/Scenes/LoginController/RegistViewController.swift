@@ -51,15 +51,15 @@ class RegistViewController: UIViewController, ToastDelegate {
 	func addBottomButtons() -> Void {
 		let goRegistButton = UIButton.init(type: UIButtonType.custom)
 		self.view.addSubview(goRegistButton)
-		goRegistButton.mas_makeConstraints { (make) in
-			make?.width.equalTo()(self.view)
+		goRegistButton.snp.makeConstraints { (make) in
+			make.width.equalTo(self.view)
 			if #available(iOS 11.0, *) {
-				make?.bottom.equalTo()(self.view.mas_safeAreaLayoutGuideBottom)
+				make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
 			} else {
-				make?.bottom.equalTo()(self.view.mas_bottom)
+				make.bottom.equalTo(self.view.snp.bottom)
 			}
-			make?.centerX.equalTo()(self.view)
-			make?.height.equalTo()(30)
+			make.centerX.equalTo(self.view)
+			make.height.equalTo(30)
 		}
 		goRegistButton.setTitle("已有账号，去登录", for: UIControlState.normal)
 		goRegistButton.titleLabel?.textColor = UIColor.init(hexString: "#A6A6A6")
@@ -68,11 +68,11 @@ class RegistViewController: UIViewController, ToastDelegate {
 		goRegistButton.addTarget(self, action: #selector(goLoginButton(button:)), for: UIControlEvents.touchUpInside)
 		let line: UIView = UIView.init()
 		self.view.addSubview(line)
-		line.mas_makeConstraints { (make) in
-			make?.width.equalTo()(goRegistButton)
-			make?.height.equalTo()(1)
-			make?.bottom.equalTo()(goRegistButton.mas_top)
-			make?.centerX.equalTo()(goRegistButton)
+		line.snp.makeConstraints { (make) in
+			make.width.equalTo(goRegistButton)
+			make.height.equalTo(1)
+			make.bottom.equalTo(goRegistButton.snp.top)
+			make.centerX.equalTo(goRegistButton)
 		}
 		line.backgroundColor = UIColor.init(hexString: "#A6A6A6")
 		if self.isWeChatInstall {
@@ -83,15 +83,15 @@ class RegistViewController: UIViewController, ToastDelegate {
 	func addWeChatbutton() -> Void {
 		let weChatButton = UIButton.init(type: UIButtonType.custom)
 		self.view.addSubview(weChatButton)
-		weChatButton.mas_makeConstraints { (make) in
-			make?.width.equalTo()(self.view)?.multipliedBy()(0.9)
-			make?.height.equalTo()(30)
+		weChatButton.snp.makeConstraints { (make) in
+			make.width.equalTo(self.view).multipliedBy(0.9)
+			make.height.equalTo(30)
+			make.centerX.equalTo(self.view)
 			if #available(iOS 11.0, *) {
-				make?.bottom.equalTo()(self.view.mas_safeAreaLayoutGuideBottom)?.offset()(-46)
+				make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-46)
 			} else {
-				make?.bottom.equalTo()(self.view.mas_bottom)?.offset()(-46)
+					make.bottom.equalTo(self.view.snp.bottom).offset(-46)
 			}
-			make?.centerX.equalTo()(self.view)
 		}
 		weChatButton.backgroundColor = UIColor.init(hexString: "#1b1C1F")
 		weChatButton.layer.cornerRadius = 6.0
@@ -102,8 +102,8 @@ class RegistViewController: UIViewController, ToastDelegate {
 		if let weChatLogo = UIImage.init(named: "weChat.png") {
 			weChatImageView.image = weChatLogo
 		}
-		weChatImageView.mas_makeConstraints { (make) in
-			make?.width.and().height().equalTo()(20)
+		weChatImageView.snp.makeConstraints { (make) in
+			make.width.height.equalTo(20)
 		}
 		weChatImageView.contentMode = UIViewContentMode.scaleAspectFit
 		let titleLabel = UILabel.init()
@@ -112,8 +112,8 @@ class RegistViewController: UIViewController, ToastDelegate {
 		titleLabel.font = UIFont.systemFont(ofSize: 14.0)
 		let stackView = UIStackView.init()
 		weChatButton.addSubview(stackView)
-		stackView.mas_makeConstraints { (make) in
-			make?.centerX.and().centerY().equalTo()(weChatButton)
+		stackView.snp.makeConstraints { (make) in
+			make.center.equalTo(weChatButton)
 		}
 		stackView.spacing = 5
 		stackView.axis = UILayoutConstraintAxis.horizontal

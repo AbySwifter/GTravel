@@ -7,6 +7,5 @@
 #import "GTravelUserItem.h"
 #import "AppDelegate.h"
 #import "GTNetworkUnit.h"
-#import <Masonry/Masonry.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <WXApi.h>

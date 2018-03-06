@@ -84,7 +84,7 @@
     //    _array = sortedArr;
     NSLog(@"%lu", (unsigned long)_array.count);
 
-    for (int i = 0; i < 7; i++) {
+    for (int i = 0; i < self.array.count; i++) {
 
         //        GTEightToolButton *btn = (GTEightToolButton *)[self viewWithTag:(i +100)];
         GTEightToolBtnView *view = (GTEightToolBtnView *)[self viewWithTag:(i + 100)];

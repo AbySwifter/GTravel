@@ -8,7 +8,7 @@
 
 import UIKit
 import MBProgressHUD
-
+import SnapKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate {
 
@@ -106,14 +106,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 		self.loginFormView.backgroundColor = UIColor.clear
 		self.loginFormView.isUserInteractionEnabled = true
 		self.bgLoginImageView.addSubview(self.loginFormView)
-		self.loginFormView.mas_makeConstraints { (make) in
+		self.loginFormView.snp.makeConstraints { (make) in
 			if #available(iOS 11.0, *) {
-				make?.top.equalTo()(self.bgLoginImageView.mas_safeAreaLayoutGuideTop)?.offset()(40)
+				make.top.equalTo(self.bgLoginImageView.safeAreaLayoutGuide.snp.top)
 			} else {
-				make?.top.equalTo()(self.bgLoginImageView.mas_top)?.offset()(40)
+				make.top.equalTo(self.bgLoginImageView.snp.top)
 			}
-			make?.left.and().right().equalTo()(self.bgLoginImageView)
-			make?.height.mas_equalTo()(self.bgLoginImageView.frame.size.height / 2)
+			make.left.right.equalTo(self.bgLoginImageView)
+			make.height.equalTo(self.bgLoginImageView.frame.size.height / 2)
 		}
 		// 创建logingImageView
 		let sloganImageView = self.createsLogoView()
@@ -133,11 +133,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 		}
 		let sloganImageView = UIImageView.init(image: sloganImage!)
 		self.loginFormView.addSubview(sloganImageView)
-		sloganImageView.mas_makeConstraints { (make) in
-			make?.top.equalTo()(self.loginFormView)
-			make?.width.equalTo()(self.loginFormView)?.multipliedBy()(0.8)
-			make?.height.equalTo()(sloganImageView.mas_width)?.multipliedBy()(WHRatio) // 设置自身的纵横比
-			make?.centerX.equalTo()(self.loginFormView)
+		sloganImageView.snp.makeConstraints { (make) in
+			make.top.equalTo(self.loginFormView)
+			make.width.equalTo(self.loginFormView).multipliedBy(0.8)
+			make.height.equalTo(sloganImageView.snp.width).multipliedBy(WHRatio)
+			make.centerX.equalTo(self.loginFormView)
 		}
 		sloganImageView.contentMode = UIViewContentMode.scaleAspectFit
 		return sloganImageView
@@ -151,60 +151,60 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 		let textFaildView: UIView = UIView.init()
 		textFaildView.isUserInteractionEnabled = true
 		self.loginFormView.addSubview(textFaildView)
-		textFaildView.mas_makeConstraints { (make) in
-			make?.top.equalTo()(sloganImageView.mas_bottom)?.offset()(30)
-			make?.width.equalTo()(self.loginFormView)?.multipliedBy()(0.9)
-			make?.height.equalTo()(81)
-			make?.centerX.equalTo()(self.loginFormView)
+		textFaildView.snp.makeConstraints { (make) in
+			make.top.equalTo(sloganImageView.snp.bottom).offset(30)
+			make.width.equalTo(self.loginFormView).multipliedBy(0.9)
+			make.height.equalTo(81)
+			make.centerX.equalTo(self.loginFormView)
 		}
 		textFaildView.backgroundColor = UIColor.white
 		textFaildView.layer.cornerRadius = 5.0
 		// 分割线
 		let line = UIView.init()
 		textFaildView.addSubview(line)
-		line.mas_makeConstraints { (make) in
-			make?.width.equalTo()(textFaildView)
-			make?.height.mas_equalTo()(1)
-			make?.left.equalTo()(textFaildView.mas_left)
-			make?.centerY.equalTo()(textFaildView)
+		line.snp.makeConstraints { (make) in
+			make.width.equalTo(textFaildView)
+			make.height.equalTo(1)
+			make.left.equalTo(textFaildView.snp.left)
+			make.centerY.equalTo(textFaildView)
 		}
 		line.backgroundColor = UIColor.init(hexString: "#707179")
 		// 用户名输入头像
 		let userNameImage = UIImage.init(named: "userName.png")
 		let userNameImageView = UIImageView.init(image: userNameImage!)
 		textFaildView.addSubview(userNameImageView)
-		userNameImageView.mas_makeConstraints { (make) in
-			make?.width.and().height().mas_equalTo()(20)
-			make?.top.and().left().equalTo()(textFaildView)?.offset()(10)
+		userNameImageView.snp.makeConstraints { (make) in
+			make.width.height.equalTo(20)
+			make.top.left.equalTo(textFaildView).offset(10)
 		}
 		userNameImageView.contentMode = UIViewContentMode.scaleToFill
 		// 用户名密码图
 		let passWordImage = UIImage.init(named: "password.png")
 		let passWordImageView = UIImageView.init(image: passWordImage!)
 		textFaildView.addSubview(passWordImageView)
-		passWordImageView.mas_makeConstraints { (make) in
-			make?.width.and().height().mas_equalTo()(20)
-			make?.bottom.equalTo()(textFaildView)?.offset()(-10)
-			make?.left.equalTo()(textFaildView)?.offset()(10)
+		passWordImageView.snp.makeConstraints { (make) in
+			make.width.height.equalTo(20)
+			make.bottom.equalTo(textFaildView).offset(-10)
+			make.left.equalTo(textFaildView).offset(10)
 		}
 		passWordImageView.contentMode = UIViewContentMode.scaleToFill
 		// 用户名输入框
 		textFaildView.addSubview(_userNameTextfield)
-		_userNameTextfield.mas_makeConstraints { (make) in
-			make?.left.equalTo()(userNameImageView.mas_right)?.offset()(10)
-			make?.right.equalTo()(textFaildView)?.offset()(10)
-			make?.height.equalTo()(40)
-			make?.centerY.equalTo()(userNameImageView)
+		_userNameTextfield.snp.makeConstraints { (make) in
+			make.left.equalTo(userNameImageView.snp.right).offset(10)
+			make.right.equalTo(textFaildView).offset(10)
+			make.height.equalTo(40)
+			make.centerY.equalTo(userNameImageView)
 		}
 		_userNameTextfield.placeholder = "昵称"
 		_userNameTextfield.addTarget(self, action: #selector(userNameChanged(textField:)), for: UIControlEvents.editingChanged)
 		// 密码输入框
 		textFaildView.addSubview(_passWordTextField)
-		_passWordTextField.mas_makeConstraints { (make) in
-			make?.height.equalTo()(40)
-			make?.left.equalTo()(passWordImageView.mas_right)?.offset()(10)
-			make?.right.equalTo()(textFaildView)?.offset()(10)
-			make?.centerY.equalTo()(passWordImageView)
+		_passWordTextField.snp.makeConstraints { (make) in
+			make.height.equalTo(40)
+			make.left.equalTo(passWordImageView.snp.right).offset(10)
+			make.right.equalTo(textFaildView).offset(10)
+			make.centerY.equalTo(passWordImageView)
 		}
 		_passWordTextField.placeholder = "密码"
 		_passWordTextField.isSecureTextEntry = true
@@ -214,11 +214,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 	// 创建登录按钮
 	func createLoginBtn(_ formView: UIView) -> Void {
 		self.loginFormView.addSubview(_loginBtn)
-		_loginBtn.mas_makeConstraints { (make) in
-			make?.width.equalTo()(formView)
-			make?.top.equalTo()(formView.mas_bottom)?.offset()(30)
-			make?.centerX.equalTo()(formView)
-			make?.height.equalTo()(40)
+  		_loginBtn.snp.makeConstraints { (make) in
+			make.width.equalTo(formView)
+			make.top.equalTo(formView.snp.bottom).offset(30)
+			make.centerX.equalTo(formView)
+			make.height.equalTo(40)
+		}
+		_loginBtn.snp.makeConstraints { (make) in
+			make.width.equalTo(formView)
+			make.top.equalTo(formView.snp.bottom).offset(30)
+
 		}
 		_loginBtn.layer.cornerRadius = 6.0
 		_loginBtn.backgroundColor = UIColor.init(hexString: "#C9081B")
@@ -232,16 +237,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 	func addBottomButtons() -> Void {
 		let goRegistButton = UIButton.init(type: UIButtonType.custom)
 		self.bgLoginImageView.addSubview(goRegistButton)
-		goRegistButton.mas_makeConstraints { (make) in
-			make?.width.equalTo()(self.bgLoginImageView)
+		goRegistButton.snp.makeConstraints { (make) in
+			make.width.equalTo(self.bgLoginImageView)
 			if #available(iOS 11.0, *) {
-				make?.bottom.equalTo()(self.bgLoginImageView.mas_safeAreaLayoutGuideBottom)
+				make.bottom.equalTo(self.bgLoginImageView.safeAreaLayoutGuide.snp.bottom)
 			} else {
-				make?.bottom.equalTo()(self.bgLoginImageView.mas_bottom)
+				make.bottom.equalTo(self.bgLoginImageView.snp.bottom)
 			}
-
-			make?.centerX.equalTo()(self.bgLoginImageView)
-			make?.height.equalTo()(30)
+			make.centerX.equalTo(self.bgLoginImageView)
+			make.height.equalTo(30)
 		}
 		goRegistButton.setTitle("还没有账号，先去注册", for: UIControlState.normal)
 		goRegistButton.titleLabel?.textColor = UIColor.init(hexString: "#A6A6A6")
@@ -250,11 +254,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 		goRegistButton.addTarget(self, action: #selector(goRegistButton(button:)), for: UIControlEvents.touchUpInside)
 		let line: UIView = UIView.init()
 		self.bgLoginImageView.addSubview(line)
-		line.mas_makeConstraints { (make) in
-			make?.width.equalTo()(goRegistButton)
-			make?.height.equalTo()(1)
-			make?.bottom.equalTo()(goRegistButton.mas_top)
-			make?.centerX.equalTo()(goRegistButton)
+		line.snp.makeConstraints { (make) in
+			make.width.equalTo(goRegistButton)
+			make.height.equalTo(1)
+			make.bottom.equalTo(goRegistButton.snp.top)
+			make.centerX.equalTo(goRegistButton)
 		}
 		line.backgroundColor = UIColor.init(hexString: "#A6A6A6")
 		if self.isWeChatInstall {
@@ -265,16 +269,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 	func addWeChatbutton() -> Void {
 		let weChatButton = UIButton.init(type: UIButtonType.custom)
 		self.bgLoginImageView.addSubview(weChatButton)
-		weChatButton.mas_makeConstraints { (make) in
-			make?.width.equalTo()(self.bgLoginImageView)?.multipliedBy()(0.9)
-			make?.height.equalTo()(30)
+		weChatButton.snp.makeConstraints { (make) in
+			make.width.equalTo(self.bgLoginImageView).multipliedBy(0.9)
+			make.height.equalTo(30)
 			if #available(iOS 11.0, *) {
-				make?.bottom.equalTo()(self.bgLoginImageView.mas_safeAreaLayoutGuideBottom)?.offset()(-46)
+				make.bottom.equalTo(self.bgLoginImageView.safeAreaLayoutGuide.snp.bottom)
 			} else {
-				make?.bottom.equalTo()(self.bgLoginImageView.mas_bottom)?.offset()(-46)
+				make.bottom.equalTo(self.bgLoginImageView.snp.bottom).offset(-46)
 			}
-
-			make?.centerX.equalTo()(self.bgLoginImageView)
+			make.centerX.equalTo(self.bgLoginImageView)
 		}
 		weChatButton.backgroundColor = UIColor.init(hexString: "#1b1C1F")
 		weChatButton.layer.cornerRadius = 6.0
@@ -286,8 +289,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 			weChatImageView.image = weChatLogo
 		}
 		weChatImageView.isUserInteractionEnabled = true
-		weChatImageView.mas_makeConstraints { (make) in
-			make?.width.and().height().equalTo()(20)
+		weChatImageView.snp.makeConstraints { (make) in
+			make.width.height.equalTo(20)
 		}
 		weChatImageView.contentMode = UIViewContentMode.scaleAspectFit
 		let titleLabel = UILabel.init()
@@ -297,8 +300,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 		titleLabel.isUserInteractionEnabled = true
 		let stackView = UIStackView.init()
 		weChatButton.addSubview(stackView)
-		stackView.mas_makeConstraints { (make) in
-			make?.centerX.and().centerY().equalTo()(weChatButton)
+		stackView.snp.makeConstraints { (make) in
+			make.center.equalTo(weChatButton)
 		}
 		stackView.spacing = 5
 		stackView.axis = UILayoutConstraintAxis.horizontal
@@ -312,11 +315,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 	func setButton() -> Void {
 		let button: UIButton = UIButton.init(type: UIButtonType.custom)
 		self.loadingView.addSubview(button)
-		button.mas_makeConstraints { (make) in
-			make?.width.equalTo()(50)
-			make?.height.equalTo()(30)
-			make?.bottom.equalTo()(self.loadingView)?.offset()(-130)
-			make?.right.equalTo()(self.loadingView)?.offset()(-30)
+		button.snp.makeConstraints { (make) in
+			make.width.equalTo(50)
+			make.height.equalTo(30)
+			make.bottom.equalTo(self.loadingView).offset(-130)
+			make.right.equalTo(self.loadingView).offset(-30)
 		}
 		button.setTitle("跳过", for: UIControlState.normal)
 		button.setTitleColor(UIColor.black, for: UIControlState.normal)
@@ -330,9 +333,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 	// 设置动画视图
 	func setAnimationView() -> Void {
 		self.loadingView .addSubview(self.adImageView)
-		self.adImageView.mas_makeConstraints { (make) in
-			make?.top.and().left().right().equalTo()(self.loadingView)
-			make?.bottom.equalTo()(self.loadingView)?.offset()(-100)
+		self.adImageView.snp.makeConstraints { (make) in
+			make.top.left.right.equalTo(self.loadingView)
+			make.bottom.equalTo(self.loadingView).offset(-100)
 		}
 		self.adImageView.contentMode = UIViewContentMode.scaleAspectFill
 		self.adImageView.transform = self.adImageView.transform.scaledBy(x: 1.2, y: 1.2)
@@ -363,10 +366,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 		// 添加下方视图
 		let bottomView: UIView = UIView.init()
 		self.loadingView.addSubview(bottomView)
-		bottomView.mas_makeConstraints { (make) in
-			make?.left.and().bottom().equalTo()(self.loadingView)
-			make?.height.mas_equalTo()(100)
-			make?.width.equalTo()(self.loadingView)
+		bottomView.snp.makeConstraints { (make) in
+			make.left.bottom.equalTo(self.loadingView)
+			make.height.equalTo(100)
+			make.width.equalTo(self.loadingView)
 		}
 		bottomView.backgroundColor = UIColor.white
 
@@ -377,11 +380,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 		let imageView_luf = UIImageView.init(image: logo_Luf)
 		bottomView.addSubview(imageView_luf)
 		let lufWidth = (self.loadingView.frame.size.width-60) * logo_Luf.size.width / totalWidth
-		imageView_luf.mas_makeConstraints { (make) in
-			make?.centerY.equalTo()(bottomView)
-			make?.height.mas_equalTo()(100)
-			make?.width.mas_equalTo()(lufWidth)
-			make?.left.equalTo()(bottomView)?.offset()(15)
+		imageView_luf.snp.makeConstraints { (make) in
+			make.centerY.equalTo(bottomView)
+			make.height.equalTo(100)
+			make.width.equalTo(lufWidth)
+			make.left.equalTo(bottomView).offset(15)
 		}
 		imageView_luf.contentMode = UIViewContentMode.scaleAspectFit
 		// 添加德旅局logo
@@ -389,21 +392,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 		bottomView.addSubview(imageView_Ger)
 		let gerWidthScal = logo_Ger.size.width / totalWidth
 		let gerWidth = (self.loadingView.frame.size.width-60) * gerWidthScal
-		imageView_Ger.mas_makeConstraints { (make) in
-			make?.centerY.equalTo()(bottomView)
-			make?.left.equalTo()(imageView_luf.mas_right)?.offset()(30)
-			make?.height.mas_equalTo()(100)
-			make?.width.mas_equalTo()(gerWidth)
+		imageView_Ger.snp.makeConstraints { (make) in
+			make.centerY.equalTo(bottomView)
+			make.left.equalTo(imageView_luf.snp.right).offset(30)
+			make.height.equalTo(100)
+			make.width.equalTo(gerWidth)
 		}
 		imageView_Ger.contentMode = UIViewContentMode.scaleAspectFit
 		// 添加中心线
 		let spaceView: UIView = UIView.init()
 		bottomView.addSubview(spaceView)
-		spaceView.mas_makeConstraints { (make) in
-			make?.width.mas_equalTo()(1)
-			make?.height.mas_equalTo()(gerWidth * logo_Ger.size.height / logo_Ger.size.width)
-			make?.centerY.equalTo()(bottomView)
-			make?.left.equalTo()(imageView_luf.mas_right)?.offset()(15)
+		spaceView.snp.makeConstraints { (make) in
+			make.width.equalTo(1)
+			make.height.equalTo(gerWidth * logo_Ger.size.height / logo_Ger.size.width)
+			make.centerY.equalTo(bottomView)
+			make.left.equalTo(imageView_luf.snp.right).offset(15)
 		}
 		spaceView.backgroundColor = UIColor.init(hexString: "#F0F0F0")
 		bottomView.bringSubview(toFront: spaceView)

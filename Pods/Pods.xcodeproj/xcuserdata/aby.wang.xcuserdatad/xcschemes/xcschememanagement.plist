@@ -7,7 +7,7 @@
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<key>Masonry.xcscheme</key>
 		<dict>
@@ -15,6 +15,11 @@
 			<integer>1</integer>
 		</dict>
 		<key>Pods-GTravel.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>SnapKit.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>3</integer>

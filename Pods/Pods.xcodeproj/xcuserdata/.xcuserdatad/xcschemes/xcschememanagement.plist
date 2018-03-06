@@ -9,12 +9,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Masonry.xcscheme</key>
+		<key>Pods-GTravel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-GTravel.xcscheme</key>
+		<key>SnapKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
