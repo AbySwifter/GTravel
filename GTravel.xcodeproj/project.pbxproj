@@ -29,7 +29,6 @@
 		617955FA1B5CEDAB00E350AC /* GTEightToolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 617955F91B5CEDAB00E350AC /* GTEightToolCell.m */; };
 		617956001B5D0AAF00E350AC /* GTEightToolButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 617955FF1B5D0AAF00E350AC /* GTEightToolButton.m */; };
 		617B116D1B68DC1E009E9672 /* aide_12.png in Resources */ = {isa = PBXBuildFile; fileRef = 617B116C1B68DC1E009E9672 /* aide_12.png */; };
-		617BBDE51B8173C1000BC9D1 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 617BBDE41B8173C1000BC9D1 /* RegisterViewController.m */; };
 		617BBDE91B8189CA000BC9D1 /* sns_icon_19@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 617BBDE61B8189CA000BC9D1 /* sns_icon_19@2x.png */; };
 		617BBDEA1B8189CA000BC9D1 /* userName.png in Resources */ = {isa = PBXBuildFile; fileRef = 617BBDE71B8189CA000BC9D1 /* userName.png */; };
 		617BBDEB1B8189CA000BC9D1 /* weChat.png in Resources */ = {isa = PBXBuildFile; fileRef = 617BBDE81B8189CA000BC9D1 /* weChat.png */; };
@@ -259,7 +258,6 @@
 		C7C7E8521B0D8A8D003F9385 /* RoutesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C7E8511B0D8A8D003F9385 /* RoutesViewController.m */; };
 		C7C7E8591B0D9360003F9385 /* GTCitiesCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C7E8581B0D9360003F9385 /* GTCitiesCollectionCell.m */; };
 		C7DA0BAB1AF08E5F00077D08 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DA0BA11AF08E5F00077D08 /* AppDelegate.m */; };
-		C7DA0BAC1AF08E5F00077D08 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DA0BA71AF08E5F00077D08 /* LoginViewController.m */; };
 		C7DA0BB21AF08E7300077D08 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7DA0BAE1AF08E7300077D08 /* Images.xcassets */; };
 		C7DA0BB31AF08E7300077D08 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7DA0BB01AF08E7300077D08 /* LaunchScreen.xib */; };
 		C7DA0BB41AF08E7300077D08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7DA0BB11AF08E7300077D08 /* Main.storyboard */; };
@@ -272,6 +270,7 @@
 		C7EE81671AFA239E009B0430 /* DTWeChatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C7EE81661AFA239E009B0430 /* DTWeChatManager.m */; };
 		C7EE81731AFA265A009B0430 /* DTWeChatShareMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C7EE81721AFA265A009B0430 /* DTWeChatShareMessage.m */; };
 		C7FC84EA1AF875FA00416EB2 /* DTRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FC84E91AF875FA00416EB2 /* DTRootViewController.m */; };
+		DD367464207B44E300060B20 /* GTRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD367463207B44E300060B20 /* GTRootViewController.swift */; };
 		DD876E6F1FE8A9C700D1320C /* slogan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD876E6E1FE8A9C700D1320C /* slogan@2x.png */; };
 		DD876E721FE8B19400D1320C /* LoginAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD876E711FE8B19400D1320C /* LoginAdapter.swift */; };
 		DDDE82BE1FE7B985001399E9 /* WeChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDE82BD1FE7B985001399E9 /* WeChatManager.swift */; };
@@ -323,8 +322,6 @@
 		617955FE1B5D0AAF00E350AC /* GTEightToolButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTEightToolButton.h; sourceTree = "<group>"; };
 		617955FF1B5D0AAF00E350AC /* GTEightToolButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTEightToolButton.m; sourceTree = "<group>"; };
 		617B116C1B68DC1E009E9672 /* aide_12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aide_12.png; sourceTree = "<group>"; };
-		617BBDE31B8173C1000BC9D1 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
-		617BBDE41B8173C1000BC9D1 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		617BBDE61B8189CA000BC9D1 /* sns_icon_19@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sns_icon_19@2x.png"; sourceTree = "<group>"; };
 		617BBDE71B8189CA000BC9D1 /* userName.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userName.png; sourceTree = "<group>"; };
 		617BBDE81B8189CA000BC9D1 /* weChat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weChat.png; sourceTree = "<group>"; };
@@ -703,8 +700,6 @@
 		C7C7E8581B0D9360003F9385 /* GTCitiesCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTCitiesCollectionCell.m; sourceTree = "<group>"; };
 		C7DA0BA01AF08E5F00077D08 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C7DA0BA11AF08E5F00077D08 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C7DA0BA61AF08E5F00077D08 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		C7DA0BA71AF08E5F00077D08 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		C7DA0BAE1AF08E7300077D08 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C7DA0BB01AF08E7300077D08 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		C7DA0BB11AF08E7300077D08 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -730,6 +725,7 @@
 		C7FC84E81AF875FA00416EB2 /* DTRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTRootViewController.h; sourceTree = "<group>"; };
 		C7FC84E91AF875FA00416EB2 /* DTRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTRootViewController.m; sourceTree = "<group>"; };
 		CA205E27E16E3B8F871F27EE /* Pods_GTravel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GTravel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD367463207B44E300060B20 /* GTRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTRootViewController.swift; sourceTree = "<group>"; };
 		DD876E6E1FE8A9C700D1320C /* slogan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slogan@2x.png"; sourceTree = "<group>"; };
 		DD876E711FE8B19400D1320C /* LoginAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAdapter.swift; sourceTree = "<group>"; };
 		DDDE82BC1FE7B985001399E9 /* GTravel-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GTravel-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -1508,7 +1504,6 @@
 			isa = PBXGroup;
 			children = (
 				C7FC84DD1AF8725F00416EB2 /* Common */,
-				C7DA0BA51AF08E5F00077D08 /* Login */,
 				C7DA0BA31AF08E5F00077D08 /* InGermany */,
 				C7DA0BA41AF08E5F00077D08 /* Discovery */,
 				C7530F0B1AF20E3F009E00CD /* User */,
@@ -1554,17 +1549,6 @@
 				C7A68AD71B28379F00C6FA93 /* Route */,
 			);
 			path = Discovery;
-			sourceTree = "<group>";
-		};
-		C7DA0BA51AF08E5F00077D08 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				C7DA0BA61AF08E5F00077D08 /* LoginViewController.h */,
-				C7DA0BA71AF08E5F00077D08 /* LoginViewController.m */,
-				617BBDE31B8173C1000BC9D1 /* RegisterViewController.h */,
-				617BBDE41B8173C1000BC9D1 /* RegisterViewController.m */,
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		C7DA0BAA1AF08E5F00077D08 /* Models */ = {
@@ -1673,6 +1657,21 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		DD36745F207B188800060B20 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DD367463207B44E300060B20 /* GTRootViewController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		DD367460207B441E00060B20 /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Discovery;
+			sourceTree = "<group>";
+		};
 		DD876E701FE8B12E00D1320C /* Adapter */ = {
 			isa = PBXGroup;
 			children = (
@@ -1684,6 +1683,7 @@
 		DDA3ED221FE219BC008B2CDA /* SwiftRebuild */ = {
 			isa = PBXGroup;
 			children = (
+				DD36745F207B188800060B20 /* Common */,
 				DD876E701FE8B12E00D1320C /* Adapter */,
 				DDDE82C11FE7BCD5001399E9 /* Utils */,
 				DDDE82C01FE7BCBD001399E9 /* Scenes */,
@@ -1706,6 +1706,7 @@
 		DDDE82C01FE7BCBD001399E9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DD367460207B441E00060B20 /* Discovery */,
 				DDDE82D31FE7BE2E001399E9 /* Model */,
 				DDDE82D21FE7BDDA001399E9 /* LoginController */,
 			);
@@ -1982,6 +1983,7 @@
 				C71C65B51B2062620047E3BE /* GTNavigationController.m in Sources */,
 				C7B1A7B91AF0855300FC13B4 /* main.m in Sources */,
 				C70B723C1B15706D00B79400 /* GTCategory.m in Sources */,
+				DD367464207B44E300060B20 /* GTRootViewController.swift in Sources */,
 				C7767A911B030AC400426C31 /* GTToolItemsCell.m in Sources */,
 				C75F25241AFB0B4000BAE926 /* DTNetworkUnit.m in Sources */,
 				C77821051AFC6F5100CCA61F /* GTravelImageItem.m in Sources */,
@@ -2012,7 +2014,6 @@
 				C734209C1B008B460082970D /* DTScrollView.m in Sources */,
 				C7C1B3F11B29738000539189 /* GTAnnotation.m in Sources */,
 				C7530F371AF21B35009E00CD /* UIDevice+Additions.m in Sources */,
-				617BBDE51B8173C1000BC9D1 /* RegisterViewController.m in Sources */,
 				617955FA1B5CEDAB00E350AC /* GTEightToolCell.m in Sources */,
 				61A050FD1B79AF2A007FA1D4 /* UIImage+ZH.m in Sources */,
 				61E0CAD11B54C80900AB745B /* UIImage+GIF.m in Sources */,
@@ -2033,7 +2034,6 @@
 				61E0CA9B1B54AAF500AB745B /* DTPartnerLogo.m in Sources */,
 				C70B726F1B15AC9000B79400 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				C7C1B3EE1B29667100539189 /* MKMapView+ZoomLevel.m in Sources */,
-				C7DA0BAC1AF08E5F00077D08 /* LoginViewController.m in Sources */,
 				61D8CEBE1B56A7E8002F8FF3 /* GTToolsSet.m in Sources */,
 				617D6ED01B612F3100C8E844 /* GTShareView.m in Sources */,
 				C71C65AB1B203D7E0047E3BE /* SendImageViewController.m in Sources */,

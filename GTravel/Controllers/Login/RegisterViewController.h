@@ -8,6 +8,7 @@
 
 #import "DTRootViewController.h"
 
+
 @interface RegisterViewController : DTRootViewController
 
 @end

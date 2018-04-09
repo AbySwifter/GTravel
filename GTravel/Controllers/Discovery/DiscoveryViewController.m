@@ -3,13 +3,13 @@
 //  GTravel
 //
 //  Created by Raynay Yue on 4/29/15.
-//  Copyright (c) 2015 Xi'an Tripshow Information Technology Co., Ltd. All rights reserved.
+// Copyright (c) 2015 Xi'an Tripshow Information Technology Co., Ltd. All rights reserved.
 //
 
 #import "DiscoveryViewController.h"
-#import "RYCommon.h"
-#import "DTScrollView.h"
-#import "GTRouteHeaderCell.h"
+#import "RYCommon.h" // 常量的处理
+#import "DTScrollView.h" // 含有图片处理的滚动视图
+#import "GTRouteHeaderCell.h" // Table Cell 继承自自定义Cell
 #import "GTToolItemsView.h"
 #import "GTToolItemsCell.h"
 #import "GTravelToolItem.h"
@@ -36,7 +36,7 @@
 #import "UserViewController.h"
 
 
-#define BannerSizeRatio (640.0 / 140.0)
+#define BannerSizeRatio (640.0 / 140.0) // banner广告图的比例
 #define PartnerLogoRatio (640.0 / 160.0)
 #define CitiesRatio (640.0 / 210.0)
 #define TownsRatio (640.0 / 100.0)

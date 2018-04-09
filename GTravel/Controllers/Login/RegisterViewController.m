@@ -11,6 +11,7 @@
 #import "WXApi.h"
 #import "RYCommon.h"
 #import "MBProgressHUD.h"
+#import "GTravel-Swift.h"
 
 @interface RegisterViewController () <UITextFieldDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameTextFiled;
@@ -72,6 +73,7 @@
     UITapGestureRecognizer *tapSex = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(touchSex)];
     [self.checkView addGestureRecognizer:tapSex];
     //    [self.sexLabel addGestureRecognizer:tapSex];
+	
 }
 
 - (void)touchSex

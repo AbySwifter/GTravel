@@ -69,34 +69,6 @@
 			[task resume];
 		}];
 		[queue addOperation:operation];
-//        [NSURLConnection sendAsynchronousRequest:request
-//                                           queue:queue
-//                               completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-//
-//                                 if (connectionError) {
-//                                     NSLog(@"请求失败, error = %@", connectionError);
-//                                 }
-//                                 else {
-//                                     NSError *error;
-//                                     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-//                                     if (error) {
-//                                         NSLog(@"解析失败err : %@", error);
-//                                     }
-//                                     else {
-//                                         NSArray *list = [dict objectForKey:@"lists"];
-//                                         for (NSDictionary *dict in list) {
-//                                             DTSubLogoDetail *subLogo = [DTSubLogoDetail subLogoDetailWithDict:dict];
-//                                             [self.subLogoArray addObject:subLogo];
-//                                             DTSubLogoImage *imgBtn = [[DTSubLogoImage alloc] init];
-//                                             imgBtn.delegate = self;
-//                                             [self addSubview:imgBtn];
-//                                             dispatch_async(dispatch_get_main_queue(), ^{
-//                                               imgBtn.subLogo = subLogo;
-//                                             });
-//                                         }
-//                                     }
-//                                 }
-//                               }];
     }
     return self;
 }

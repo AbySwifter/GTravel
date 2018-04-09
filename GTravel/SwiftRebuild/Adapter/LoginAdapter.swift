@@ -1,7 +1,7 @@
 //
 //  LoginAdapter.swift
 //  GTravel
-//  用于登录的适配器
+//  用于登录的适配器， 主要用于适配objective-C代码
 //
 //  Created by aby on 2017/12/19.
 //  Copyright © 2017年 Xi'an Tripshow Information Technology Co., Ltd. All rights reserved.
