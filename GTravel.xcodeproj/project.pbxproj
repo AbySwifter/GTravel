@@ -271,6 +271,7 @@
 		C7EE81731AFA265A009B0430 /* DTWeChatShareMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C7EE81721AFA265A009B0430 /* DTWeChatShareMessage.m */; };
 		C7FC84EA1AF875FA00416EB2 /* DTRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FC84E91AF875FA00416EB2 /* DTRootViewController.m */; };
 		DD367464207B44E300060B20 /* GTRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD367463207B44E300060B20 /* GTRootViewController.swift */; };
+		DD54833F207B70DF00F2B360 /* String+range.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD54833E207B70DF00F2B360 /* String+range.swift */; };
 		DD876E6F1FE8A9C700D1320C /* slogan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD876E6E1FE8A9C700D1320C /* slogan@2x.png */; };
 		DD876E721FE8B19400D1320C /* LoginAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD876E711FE8B19400D1320C /* LoginAdapter.swift */; };
 		DDDE82BE1FE7B985001399E9 /* WeChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDE82BD1FE7B985001399E9 /* WeChatManager.swift */; };
@@ -726,6 +727,7 @@
 		C7FC84E91AF875FA00416EB2 /* DTRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTRootViewController.m; sourceTree = "<group>"; };
 		CA205E27E16E3B8F871F27EE /* Pods_GTravel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GTravel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD367463207B44E300060B20 /* GTRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTRootViewController.swift; sourceTree = "<group>"; };
+		DD54833E207B70DF00F2B360 /* String+range.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+range.swift"; sourceTree = "<group>"; };
 		DD876E6E1FE8A9C700D1320C /* slogan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slogan@2x.png"; sourceTree = "<group>"; };
 		DD876E711FE8B19400D1320C /* LoginAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAdapter.swift; sourceTree = "<group>"; };
 		DDDE82BC1FE7B985001399E9 /* GTravel-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GTravel-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -1699,6 +1701,7 @@
 				DDDE82C31FE7BDAB001399E9 /* StackView+HitTest.swift */,
 				DDDE82C81FE7BDAB001399E9 /* UIColor+Expanded.swift */,
 				DDDE82C71FE7BDAB001399E9 /* UIVIewController+HUD.swift */,
+				DD54833E207B70DF00F2B360 /* String+range.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1777,7 +1780,7 @@
 						CreatedOnToolsVersion = 6.3;
 						DevelopmentTeam = R3EQ7H8QLX;
 						LastSwiftMigration = 0920;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 0;
@@ -2015,6 +2018,7 @@
 				C7C1B3F11B29738000539189 /* GTAnnotation.m in Sources */,
 				C7530F371AF21B35009E00CD /* UIDevice+Additions.m in Sources */,
 				617955FA1B5CEDAB00E350AC /* GTEightToolCell.m in Sources */,
+				DD54833F207B70DF00F2B360 /* String+range.swift in Sources */,
 				61A050FD1B79AF2A007FA1D4 /* UIImage+ZH.m in Sources */,
 				61E0CAD11B54C80900AB745B /* UIImage+GIF.m in Sources */,
 				DDDE82CB1FE7BDAB001399E9 /* StackView+HitTest.swift in Sources */,
@@ -2253,11 +2257,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Shi Dai Yi Feng Information Technology Co.Ltd. (R3EQ7H8QLX)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = R3EQ7H8QLX;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2278,8 +2282,8 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dragontrail.gtravel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "ebe006fc-38ba-44d4-8485-e7fc18254193";
+				PROVISIONING_PROFILE_SPECIFIER = GtravelDevelopment;
 				SWIFT_OBJC_BRIDGING_HEADER = "$SRCROOT/GTravel/SwiftRebuild/GTravel-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -2293,11 +2297,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Shi Dai Yi Feng Information Technology Co.Ltd. (R3EQ7H8QLX)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = R3EQ7H8QLX;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2319,8 +2323,8 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dragontrail.gtravel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "1db89a1e-e67f-4617-beec-9e595bed4959";
+				PROVISIONING_PROFILE_SPECIFIER = GtravelDistrubuton;
 				SWIFT_OBJC_BRIDGING_HEADER = "$SRCROOT/GTravel/SwiftRebuild/GTravel-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};

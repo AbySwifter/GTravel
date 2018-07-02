@@ -191,8 +191,6 @@
 - (void)showLoginViewAnimated:(BOOL)animated
 {
 	self.loginWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-	//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
-	//    UIViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
 	LoginViewController* loginViewController = [[LoginViewController alloc] init];
 	loginViewController.needLoadingView = animated; // 是否需要登录动画
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loginViewController];

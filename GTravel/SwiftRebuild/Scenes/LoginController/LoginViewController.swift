@@ -10,7 +10,7 @@ import UIKit
 import MBProgressHUD
 import SnapKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate {
+class LoginViewController: GTRootViewController, UITextFieldDelegate, ToastDelegate {
 
 	//MARK: 属性
 	@objc var needLoadingView: Bool = true
@@ -121,6 +121,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 		let formView = self.createInputForm(sloganImageView)
 		// 再接下来创建登录按钮
 		self.createLoginBtn(formView)
+		// 创建跳过按钮
+		self.addSkipBtn()
 		// 然后创建微信登录按钮
 		self.addBottomButtons()
 	}
@@ -229,11 +231,35 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 		_loginBtn.backgroundColor = UIColor.init(hexString: "#C9081B")
 		_loginBtn.setTitle("登录", for: UIControlState.normal)
 		_loginBtn.titleLabel?.textColor = UIColor.white
-		_loginBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14.0)
+		_loginBtn.titleLabel?.font = UIFont.systemFont(ofSize: 16.0)
 		_loginBtn.addTarget(self, action: #selector(touchInSide(button:)), for: UIControlEvents.touchDown)
 		_loginBtn.addTarget(self, action: #selector(loginAction(button:)), for: UIControlEvents.touchUpInside)
 	}
-	// 底部的按钮组
+	func addSkipBtn() -> Void {
+		let btn = UIButton.init(type: .custom)
+		view.addSubview(btn)
+		btn.snp.makeConstraints { (make) in
+			make.width.equalTo(100)
+			make.height.equalTo(30)
+			make.centerX.equalTo(self.loginFormView)
+			make.top.equalTo(self.loginFormView.snp.bottom).offset(0)
+		}
+		let title = "跳过登录"
+		let titleString = NSMutableAttributedString.init(string: title)
+		let titleRange_ns = NSRange.init(location: 0, length: titleString.length)
+		let pargraphStyle = NSMutableParagraphStyle.init()
+		pargraphStyle.lineSpacing = 5
+		let attibuteDic: Dictionary<NSAttributedStringKey, Any> = [
+			NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue,
+			NSAttributedStringKey.underlineColor: UIColor.init(hexString: "#C9081B"),
+			NSAttributedStringKey.foregroundColor: UIColor.init(hexString: "#C9081B"),
+			NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16.0)
+		]
+		titleString.addAttributes(attibuteDic, range: titleRange_ns)
+		btn.setAttributedTitle(titleString, for: .normal)
+		btn.addTarget(self, action: #selector(dismissSelf(button:)), for: .touchUpInside)
+	}
+	// 底部的按钮组（登录页的按钮组）
 	func addBottomButtons() -> Void {
 		let goRegistButton = UIButton.init(type: UIButtonType.custom)
 		self.bgLoginImageView.addSubview(goRegistButton)
@@ -361,7 +387,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 			})
 		}
 	}
-	// 设置底部视图
+	// 设置底部视图(广告动画页面的底部视图)
 	func setBottomView() -> Void {
 		// 添加下方视图
 		let bottomView: UIView = UIView.init()
@@ -436,6 +462,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ToastDelegate 
 			// FIXME:之后开始尝试自动登录
 			self.manager.autoLogin()
 		}
+	}
+
+	@objc
+	func dismissSelf(button: UIButton) -> Void {
+		self.showLoginView(false, animated: true)
 	}
 
 	@objc

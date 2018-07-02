@@ -23,17 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="048503fd-81f3-4f68-93b4-2b4a9d5eaa41" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/GTravel/SwiftRebuild/Common/GTRootViewController.swift" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/GTravel/SwiftRebuild/Scenes/Discovery/DiscoveryViewController.swift" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/GTravel/SwiftRebuild/Extension/String+range.swift" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/GTravel.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/GTravel.xcodeproj/project.pbxproj" />
       <change beforePath="$PROJECT_DIR$/GTravel.xcworkspace/xcuserdata/aby.wang.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/GTravel.xcworkspace/xcuserdata/aby.wang.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change beforePath="$PROJECT_DIR$/GTravel/Controllers/Discovery/DTSubLogo.m" afterPath="$PROJECT_DIR$/GTravel/Controllers/Discovery/DTSubLogo.m" />
+      <change beforePath="$PROJECT_DIR$/GTravel.xcworkspace/xcuserdata/aby.wang.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/GTravel.xcworkspace/xcuserdata/aby.wang.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
+      <change beforePath="$PROJECT_DIR$/GTravel/AppDelegate/AppDelegate.m" afterPath="$PROJECT_DIR$/GTravel/AppDelegate/AppDelegate.m" />
       <change beforePath="$PROJECT_DIR$/GTravel/Controllers/Discovery/DiscoveryViewController.m" afterPath="$PROJECT_DIR$/GTravel/Controllers/Discovery/DiscoveryViewController.m" />
-      <change beforePath="$PROJECT_DIR$/GTravel/Controllers/Login/RegisterViewController.h" afterPath="$PROJECT_DIR$/GTravel/Controllers/Login/RegisterViewController.h" />
-      <change beforePath="$PROJECT_DIR$/GTravel/Controllers/Login/RegisterViewController.m" afterPath="$PROJECT_DIR$/GTravel/Controllers/Login/RegisterViewController.m" />
       <change beforePath="$PROJECT_DIR$/GTravel/SwiftRebuild/Adapter/LoginAdapter.swift" afterPath="$PROJECT_DIR$/GTravel/SwiftRebuild/Adapter/LoginAdapter.swift" />
-      <change beforePath="$PROJECT_DIR$/GTravel/SwiftRebuild/GTravel-Bridging-Header.h" afterPath="$PROJECT_DIR$/GTravel/SwiftRebuild/GTravel-Bridging-Header.h" />
-      <change beforePath="$PROJECT_DIR$/GTravel/SwiftRebuild/Utils/GConst.swift" afterPath="$PROJECT_DIR$/GTravel/SwiftRebuild/Utils/GConst.swift" />
+      <change beforePath="$PROJECT_DIR$/GTravel/SwiftRebuild/Scenes/LoginController/LoginViewController.swift" afterPath="$PROJECT_DIR$/GTravel/SwiftRebuild/Scenes/LoginController/LoginViewController.swift" />
       <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/aby.wang.xcuserdatad/xcschemes/xcschememanagement.plist" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/aby.wang.xcuserdatad/xcschemes/xcschememanagement.plist" />
       <change beforePath="$PROJECT_DIR$/Resources/Storyboards/Main.storyboard" afterPath="$PROJECT_DIR$/Resources/Storyboards/Main.storyboard" />
     </list>
@@ -45,13 +43,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_A5828D0C-EEA6-4E2C-B8FB-326885591E77" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="DiscoveryViewController.m" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GTravel/Controllers/Discovery/DiscoveryViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
+            <state relative-caret-position="294">
               <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
               <folding>
                 <element signature="e#181#216#0" expanded="true" />
@@ -63,7 +61,7 @@
       <file leaf-file-name="DTRootViewController.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GTravel/Controllers/Common/DTRootViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
+            <state relative-caret-position="2394">
               <caret line="126" column="74" lean-forward="false" selection-start-line="126" selection-start-column="74" selection-end-line="126" selection-end-column="74" />
               <folding />
             </state>
@@ -303,12 +301,13 @@
       <option name="presentableId" value="Default" />
       <updated>1523244459661</updated>
       <workItem from="1523244462790" duration="4157000" />
-      <workItem from="1523261001461" duration="884000" />
+      <workItem from="1523261001461" duration="1104000" />
+      <workItem from="1525746811365" duration="26000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5041000" />
+    <option name="totallyTimeSpent" value="5287000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-158" width="1920" height="1058" extended-state="6" />
@@ -349,6 +348,84 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/GTravel/Controllers/Discovery/DiscoveryViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#181#216#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GTravel/Controllers/Common/DTRootViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2394">
+          <caret line="126" column="74" lean-forward="false" selection-start-line="126" selection-start-column="74" selection-end-line="126" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_Libs/Lib_Common/RYCommonFunctions.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="7" lean-forward="false" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GTravel/Controllers/Common/DTRootViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="30" column="64" lean-forward="false" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
+          <folding>
+            <element signature="e#178#201#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_Libs/Lib_RefreshView/SRRefreshView.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GTravel/Controllers/Discovery/DiscoveryViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GTravel/Controllers/Common/GTToolItemsView.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="29" column="3" lean-forward="false" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GTravel/Controllers/Discovery/DTSubLogo.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GTravel/Controllers/Discovery/DTSubLogo.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="36" column="41" lean-forward="false" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+          <folding>
+            <element signature="e#166#187#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_Libs/Lib_Common/RYCommonFunctions.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -415,7 +492,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -423,7 +499,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -431,7 +506,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -475,9 +549,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="77">
           <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-          <folding>
-            <element signature="e#165#198#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -485,7 +556,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -499,7 +569,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GTravel/Controllers/Common/DTRootViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
+        <state relative-caret-position="2394">
           <caret line="126" column="74" lean-forward="false" selection-start-line="126" selection-start-column="74" selection-end-line="126" selection-end-column="74" />
           <folding />
         </state>
@@ -523,7 +593,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GTravel/Controllers/Discovery/DiscoveryViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
+        <state relative-caret-position="294">
           <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding>
             <element signature="e#181#216#0" expanded="true" />

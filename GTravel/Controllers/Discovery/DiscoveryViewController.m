@@ -140,7 +140,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self initializedRefreshViewForView:self.tableView];
+//    [self initializedRefreshViewForView:self.tableView];
     [self initializeTableView];
     //    [self reloadAllData];
     [self initializeNavigationBarItems];
@@ -148,10 +148,18 @@
     [self.tableView reloadData];
 }
 
+- (void)viewDidLayoutSubviews{
+	[super viewDidLayoutSubviews];
+	[self initializedRefreshViewForView:self.tableView];
+}
 
 #pragma mark - IBAction Methods
 - (IBAction)onInGermanyButton:(UIBarButtonItem *)sender
 {
+	if (![self isLogin]) {
+		[self showLoginAlert];
+		return;
+	}
     if ([self.model.currentPlaceMark.country isEqualToString:@"中国"]) {
 
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"此功能在德国才可用" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
@@ -165,6 +173,10 @@
 
 - (IBAction)onUserCenterButton:(UIBarButtonItem *)sender
 {
+	if (![self isLogin]) {
+		[self showLoginAlert];
+		return;
+	}
     UserViewController *vc = [self.navigationController.storyboard instantiateViewControllerWithIdentifier:@"UserViewController"];
 
     vc.toolsSetArray = self.toolsSetArray;
@@ -173,6 +185,33 @@
 }
 
 #pragma mark - Non-Public Methods
+
+-(BOOL)isLogin {
+	if (self.cacheUnit.userID) {
+		return YES;
+	} else if (self.cacheUnit.userNickName&&self.cacheUnit.passWord) {
+		return YES;
+	} else {
+		return NO;
+	}
+}
+
+-(void)showLoginAlert{
+	__weak DiscoveryViewController* weakSelf = self;
+	UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"登录后才能使用本功能，是否登录" preferredStyle:UIAlertControllerStyleAlert];
+	UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+
+	}];
+	UIAlertAction* sure = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+		[weakSelf showLoginView:YES animated:NO];
+	}];
+	[alert addAction:cancel];
+	[alert addAction:sure];
+	[self presentViewController:alert animated:YES completion:^{
+
+	}];
+}
+
 - (void)initializeTableView
 {
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
@@ -376,31 +415,6 @@
 		[task resume];
 	}];
 	[queue addOperation:operation];
-//    [NSURLConnection sendAsynchronousRequest:request
-//                                       queue:queue
-//                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-//                             if (connectionError) {
-//                                 NSLog(@"请求失败,error = %@", connectionError);
-//                             }
-//                             else {
-//                                 NSError *error;
-//                                 NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-//                                 if (error) {
-//                                     NSLog(@"解析出错, error = %@", error);
-//                                 }
-//                                 else {
-//                                     NSMutableArray *setDictArray = [dict objectForKey:kTools];
-//                                     NSMutableArray *array = [NSMutableArray array];
-//                                     for (NSDictionary *dict in setDictArray) {
-//                                         // 每一个字典转成tools集合模型（字典）,里面存放它的属性和toolsItem的数组
-//                                         GTToolsSet *toolsSet = [GTToolsSet toolsSetWithDict:dict];
-//                                         [array addObject:toolsSet];
-//                                     }
-//                                     self.toolsSetArray = array;
-//                                     [self.tableView reloadData];
-//                                 }
-//                             }
-//                           }];
     isTipsLoad = YES;
     if (isBannerLoad) {
         [self.refreshView endRefresh];
@@ -501,10 +515,6 @@
     [self performSegueWithIdentifier:@"PushToRoutes" sender:nil];
 }
 
-//-(void)gotoMoreToolItemsView
-//{
-//    [self performSegueWithIdentifier:@"PushTipListView" sender:nil];
-//}
 
 - (void)userHeadImageDidUpdateNotification:(NSNotification *)notification
 {
@@ -526,8 +536,6 @@
     switch (indexPath.row) {
         case CellIndexToolItems: {
             static NSString *toolItemCellIdentifier = @"GTToolItemsCell";
-            //            cell = [tableView dequeueReusableCellWithIdentifier:toolItemCellIdentifier forIndexPath:indexPath];
-            //            [(GTToolItemsCell*)cell setCellContentWithItems:self.toolItems delegate:self];
 
             cell = [tableView dequeueReusableCellWithIdentifier:toolItemCellIdentifier forIndexPath:indexPath];
             [(GTToolItemsCell *)cell setContentWithToolsSetArray:self.toolsSetArray delegate:self];
@@ -536,11 +544,6 @@
             break;
         }
         case CellIndexCities: {
-            //            static NSString *travelCitiesCellIdentifier = @"GTravelCitiesCell";
-            //            cell = [tableView dequeueReusableCellWithIdentifier:travelCitiesCellIdentifier forIndexPath:indexPath];
-            //            [(GTravelCitiesCell*)cell setCityItems:self.cities];
-            //            [(GTravelCitiesCell*)cell setDelegate:self];
-            //            break;
             cell = [[GTCitiesCell alloc] init];
             [(GTCitiesCell *)cell setCityItems:self.cities];
             [(GTCitiesCell *)cell setDelegate:self];
@@ -548,11 +551,6 @@
         }
 #pragma mark--- copy
         case CellIndexTowns: {
-            //            static NSString *travelTownsCellIdentifier = @"GTravelTownsCell";
-            //            cell = [tableView dequeueReusableCellWithIdentifier:travelTownsCellIdentifier forIndexPath:indexPath];
-            //            [(GTravelTownsCell*)cell setTownsItems:self.towns];
-            //            [(GTravelTownsCell*)cell setDelegate:self];
-            //            break;
             cell = [[GTTownsCell alloc] init];
             [(GTTownsCell *)cell setTownsItems:self.towns];
             [(GTTownsCell *)cell setDelegate:self];
@@ -713,10 +711,10 @@
 #pragma mark - GTToolItemsCellDelegate
 - (void)itemsCell:(GTToolItemsCell *)itemsCell didSelectItemAtIndex:(NSInteger)index
 {
+	
     GTToolsSetViewController *vc = [[GTToolsSetViewController alloc] init];
     // 将安排行程整个数组传过去，数组里装得都是toolsItem
     GTToolsSet *toolsSet = self.toolsSetArray[index];
-
     vc.toolsItemsArray = toolsSet.toolsItemsArray;
     [self.navigationController pushViewController:vc animated:YES];
 }

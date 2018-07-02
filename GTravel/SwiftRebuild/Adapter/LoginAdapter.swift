@@ -1,7 +1,7 @@
 //
 //  LoginAdapter.swift
 //  GTravel
-//  用于登录的适配器， 主要用于适配objective-C代码
+//  用于登录的适配器， 主要用于适配objective-C代码。
 //
 //  Created by aby on 2017/12/19.
 //  Copyright © 2017年 Xi'an Tripshow Information Technology Co., Ltd. All rights reserved.
@@ -12,7 +12,7 @@ import UIKit
 typealias LoginResultCallback = (_ err:Error?, _ msg: String) -> Void
 
 class LoginAdapter: NSObject, GTModelDelegate {
-	var model: GTModel = GTModel.shared() // model单例，Objective-C类C
+	var model: GTModel = GTModel.shared() // model单例，Objective-C类C,里面存有登录信息
 	var cacheUnit: GTCacheUnit = GTCacheUnit.sharedCache() // 缓存单例，用来检测是否可以自动登录
 	var netWorkUnit: GTNetworkUnit = GTNetworkUnit.shared() // 网络请求单例
 	var loginReslult: LoginResultCallback?
@@ -57,9 +57,10 @@ class LoginAdapter: NSObject, GTModelDelegate {
 	/// 自动登录
 	func autoLogin() -> Void {
 		if self.isUserIDExist {
-			// 根据UserID去登录
+			// 根据UserID去登录，这里是微信登录过的用户。
 			model.startToLogin()
 		} else if self.isNickName&&self.isPWD {
+			// 这里是非微信登录的用户
 			model.startNormalAutoLogin()
 		}
 	}
